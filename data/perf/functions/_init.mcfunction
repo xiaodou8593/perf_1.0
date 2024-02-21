@@ -10,6 +10,7 @@ worldborder set 50000001 0
 
 # 设置记分板
 scoreboard objectives add int dummy
+scoreboard players set perf_start int -1
 scoreboard players set 2 int 2
 scoreboard players set 100 int 100
 
