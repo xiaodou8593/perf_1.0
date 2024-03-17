@@ -35,6 +35,22 @@ function perf:_benchmark
 function perf:template/_start
 ```
 
+## 输出结果解读
+
+cnt是测试样本数，也就是运行了多少个tick
+
+n是递归次数，也就是单个tick运行多少次测试命令
+
+min, max, avg分别是单个样本运行时间的最小值，最大值，平均值，单位是ms
+
+由于未知bug, worldborder有时候测时间是0，min的值变为0，这种情况需要重测
+
+err是最大误差，它的算法是：err = 取最大值{(max-avg)/avg, (avg-min)/avg}
+
+作者一般要求err在10%以内属于可接受，不过严谨的阈值还可以讨论
+
+scb_add表示测试命令约合多少条记分板加法命令(也就是benchmark)，它自动计算了n的影响
+
 ## 挂机运行
 
 如果测试时间过长，您想挂机自动完成多个项目的测试，可以使用perf:io afk
