@@ -1,9 +1,9 @@
-#perf:template/_print
+#perf:store_pos/base/_print
 # 输出测试数据
 
-data modify storage perf:io temp set from storage perf:class template
+data modify storage perf:io temp set from storage perf:class store_pos/base
 
-tellraw @a "--- template perf result ---"
+tellraw @a "--- store_pos/base perf result ---"
 
 execute store result score perf_cnt int run data get storage perf:io temp.cnt
 execute store result score perf_n int run data get storage perf:io temp.n

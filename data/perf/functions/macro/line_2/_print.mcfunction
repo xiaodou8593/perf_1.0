@@ -1,9 +1,9 @@
-#perf:template/_print
+#perf:macro/line_2/_print
 # 输出测试数据
 
-data modify storage perf:io temp set from storage perf:class template
+data modify storage perf:io temp set from storage perf:class macro/line_2
 
-tellraw @a "--- template perf result ---"
+tellraw @a "--- macro/line_2 perf result ---"
 
 execute store result score perf_cnt int run data get storage perf:io temp.cnt
 execute store result score perf_n int run data get storage perf:io temp.n

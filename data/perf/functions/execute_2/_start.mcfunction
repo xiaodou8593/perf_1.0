@@ -1,12 +1,14 @@
-#perf:template/_start
+#perf:execute_2/_start
 # 开始模板测试
 
 # 设置为文件夹名
-data modify storage perf:io testing set value "template"
+data modify storage perf:io testing set value "execute_2"
 
-# 设置测试环境(例如在这里设置实体数量)
-scoreboard players set inp int 25
-execute positioned 0 0 0 run function perf:_entities
+# 设置测试环境
+kill @e[tag=math_marker]
+summon marker 0 11 0 {Tags:["math_marker"],CustomName:'{"text":"math_marker"}',UUID:[I;0,0,0,0]}
+tag @e[tag=math_marker,limit=1] add test_as_entity
+scoreboard players set test int 0
 
 # 设置开始测试延后时间(防止上一步消耗过大使tps波动)
 scoreboard players set perf_start int 10
