@@ -1,4 +1,4 @@
-#perf:test
+#perf:damage/macro/run
 
-damage @s 10
+$damage @s $(temp)
 data modify entity @s Health set value 20.0f

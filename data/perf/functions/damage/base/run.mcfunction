@@ -1,4 +1,4 @@
-#perf:test
+#perf:damage/base/run
 
-damage @s 10
+damage @s 1
 data modify entity @s Health set value 20.0f
