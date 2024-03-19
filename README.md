@@ -16,6 +16,8 @@ function perf:_benchmark
 
 等待运行结果，误差在可接受范围内即可
 
+**由于未知bug, worldborder有时候测时间是0，min的值变为0，这种情况需要重测**
+
 ## 新建性能测试项目
 
 复制template文件夹，重新命名为测试项目名称
@@ -43,7 +45,7 @@ n是递归次数，也就是单个tick运行多少次测试命令
 
 min, max, avg分别是单个样本运行时间的最小值，最大值，平均值，单位是ms
 
-由于未知bug, worldborder有时候测时间是0，min的值变为0，这种情况需要重测
+**由于未知bug, worldborder有时候测时间是0，min的值变为0，这种情况需要重测**
 
 err是最大误差，它的算法是：err = 取最大值{(max-avg)/avg, (avg-min)/avg}
 
