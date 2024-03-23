@@ -14,6 +14,12 @@ function perf:_init
 function perf:_benchmark
 ```
 
+也可以
+
+```
+data modify storage perf:io afk set value ["benchmark"]
+```
+
 等待运行结果，误差在可接受范围内即可
 
 **由于未知bug, worldborder有时候测时间是0，min的值变为0，这种情况需要重测**
@@ -63,4 +69,29 @@ scb_add表示测试命令约合多少条记分板加法命令(也就是benchmark
 #perf:_benchmark
 # 生成测试基准
 data modify storage perf:io afk set value ["base","scb_add"]
+```
+
+## 特殊项目
+
+特殊项目，提供可复用的特定功能，为后续测试铺垫环境
+
+在后续项目之前先进行基准测试
+
+```
+data modify storage perf:io afk set value ["benchmark", ......]
+```
+
+在后续项目之前先稳定电脑功耗
+
+```
+data modify storage perf:io afk set value ["powerload", ......]
+```
+
+## 特殊标签
+
+指定测试项目的执行者实体(全局唯一)：
+
+```
+tag @e remove test_as_entity
+tag @p add test_as_entity
 ```
